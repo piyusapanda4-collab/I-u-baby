@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion, type Variants } from 'motion/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { StarrySkyCanvas } from './components/StarrySkyCanvas.tsx';
 import { RosePetalsOverlay } from './components/RosePetalsOverlay.tsx';
 import { SurpriseProgressNav } from './components/SurpriseProgressNav.tsx';
@@ -252,6 +253,9 @@ export default function App() {
           I ❤️ u baby · ummmaaaaa 😘😘😘😘 · baby ummaaa · ummmaaaah
         </p>
       </footer>
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
