@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-script: "Dancing Script", cursive;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #060B19;
+    color: #F3E5AB;
+  }
+}
+
+.font-serif-cormorant {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-display-playfair {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.font-script-romantic {
+  font-family: "Dancing Script", cursive;
+}
+
+/* Custom glow effects and scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060B19;
+}
+::-webkit-scrollbar-thumb {
+  background: #3A0E1A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6B0E23;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes glow-moon {
+  0%, 100% {
+    box-shadow: 0 0 45px 15px rgba(245, 230, 190, 0.35), 0 0 90px 40px rgba(230, 202, 101, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 65px 25px rgba(245, 230, 190, 0.45), 0 0 115px 50px rgba(230, 202, 101, 0.28);
+  }
+}
+
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-float-in {
+  animation: float-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.moon-glow {
+  animation: glow-moon 6s ease-in-out infinite;
+}
+
+/* Glassmorphism surfaces */
+.glass-wine {
+  background: linear-gradient(135deg, rgba(58, 9, 23, 0.72) 0%, rgba(20, 4, 10, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 202, 101, 0.22);
+}
+
+.glass-night {
+  background: linear-gradient(135deg, rgba(11, 19, 43, 0.78) 0%, rgba(6, 11, 25, 0.92) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 202, 101, 0.16);
+}
+
+.parchment-gold {
+  background: linear-gradient(145deg, #FFFDF8 0%, #FAF4E4 50%, #F5E8CB 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(230, 202, 101, 0.2);
+}
+
+/* Romantic vintage photo filter & soft vignette overlay */
+.romantic-photo-filter {
+  filter: sepia(0.12) contrast(1.05) saturate(1.08) brightness(0.98);
+  transition: filter 0.5s ease, transform 0.7s ease;
+}
+
+.group:hover .romantic-photo-filter {
+  filter: sepia(0.06) contrast(1.06) saturate(1.12) brightness(1.02);
+}
+
+.romantic-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 48%, transparent 36%, rgba(18, 3, 10, 0.35) 75%, rgba(10, 1, 5, 0.7) 100%),
+              linear-gradient(135deg, rgba(230, 202, 101, 0.08) 0%, transparent 45%, rgba(163, 29, 61, 0.12) 100%);
+  mix-blend-mode: multiply;
+  transition: opacity 0.4s ease;
+}
+
+.romantic-warm-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(14, 2, 8, 0.85) 0%, rgba(14, 2, 8, 0.1) 45%, rgba(230, 202, 101, 0.05) 100%);
+}

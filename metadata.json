@@ -1,0 +1,6 @@
+{
+  "name": "1000 Little Reasons I Love You",
+  "description": "A little world of surprises, made only for you. An interactive romantic Karva Chauth journey for Madhusmita ❤️ Piyusa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
